@@ -7,6 +7,7 @@
 #include <CoreMinimal.h>
 #include <GameFramework/Actor.h>
 #include <Components/ElementusInventoryComponent.h>
+#include <UObject/ObjectPtr.h>
 #include "ElementusInventoryPackage.generated.h"
 
 UCLASS(Category = "Elementus Inventory | Classes")
@@ -19,7 +20,7 @@ public:
 
 	/* The inventory component of this package actor */
 	UPROPERTY(Replicated, EditDefaultsOnly, BlueprintReadOnly, Category = "Elementus Inventory")
-	UElementusInventoryComponent* PackageInventory;
+	TObjectPtr<UElementusInventoryComponent> PackageInventory;
 
 	/* Put a item in this package */
 	UFUNCTION(BlueprintCallable, Category = "Elementus Inventory")
